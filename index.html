@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Taker</title>
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="noteInput">
+        <h1>Note Taker</h1>
+        <h2>Add a New Note:</h2>
+        <form data-note-form>
+          <div>
+            <label for="noteInput">Note:</label>
+            <textarea
+              name="noteInput"
+              id="noteInput"
+              placeholder="Write your note here"
+            ></textarea>
+          </div>
+          <p data-err-msg class="errMsg none">
+            Please enter a text more than 3 letters
+          </p>
+          <button data-add-note type="submit" class="mainBtn">Add Note</button>
+        </form>
+      </section>
+      <section data-note-display class="noteDisplay">
+        <p data-no-notes class="none">No notes added yet!</p>
+      </section>
+    </div>
+    <template data-modal-overlay>
+      <div data-overlay class="modal-overlay">
+        <div class="modal-container">
+          <p data-modal-text></p>
+          <button data-close-btn class="closeBtn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </template>
+    <template data-single-note>
+      <div class="note">
+        <h3 data-note-title></h3>
+        <p data-note-text></p>
+        <button data-view-btn class="secondaryBtn">View Detail</button>
+        <button data-close-note class="noteClose">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+    </template>
+  </body>
+</html>
